@@ -75,7 +75,7 @@
 /* Bordes guía para pantalla y botones de la calculadora (solo para ubicar) */
 .resultado,
 .botones{
-    outline: 1px dotted #c3c3c3;          /* Borde fino de guía */
+    outline: 1px solid #c3c3c3;          /* Borde fino de guía */
     min-height: 80px;
     padding: 8px;
     box-sizing: border-box;
