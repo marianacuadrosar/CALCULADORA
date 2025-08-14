@@ -1,0 +1,101 @@
+
+/* Aqui se incluye el recuadro de la calculadora y el historial */
+#contenedor2{
+    outline: 3px solid #8aa1ff;           /* Borde visible para dimensionar */
+    padding: 12px;                        /* Separación interna */
+    display: flex;                        /* Mostrar calculadora e historial lado a lado */
+    gap: 16px;                            /* Espacio entre paneles */
+    box-sizing: border-box;               /* Bordes no rompen el ancho */
+    width: 100%;                          /* ocupa todo el ancho disponible del viewport */
+    max-width: 32rem;                     /* tope superior requerido */
+    min-width: 24rem;                     /* tope inferior requerido */
+    margin-left: auto;                    /* centrado horizontal */
+    margin-right: auto;                   /* centrado horizontal */
+}
+
+/* Este es el espacio de la calculadora */
+#calculadora{
+    outline: 2px solid #7ec8e3;          /* Borde para ubicar el panel */
+    flex: 1 1 60%;                         /* Ocupa ~60% (ajústalo) */
+    min-height: 420px;                     /* Alto mínimo de referencia */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Aqui esta el historial de las operaciones realizadas */
+#historial{
+    outline: 2px solid #ffb86c;          /* Borde para ubicar el panel */
+    flex: 1 1 40%;                         /* Ocupa ~40% (ajústalo) */
+    min-height: 420px;                     /* Alto mínimo de referencia */
+    display: flex;                         /* Para reordenar hijos sin tocar el HTML */
+    flex-direction: column;
+    position: relative;                    /* Contexto para sticky */
+}
+
+/* Aqui se guardan los calculos (zona scrollable) */
+#operaciones{
+    outline: 1px solid #c3c3c3;          /* Borde fino de guía */
+    order: 1;                              /* Va debajo del header sin mover HTML */
+    overflow-y: auto;                      /* Scroll vertical del historial */
+    flex: 1;                               /* Ocupa todo el espacio disponible */
+    max-height: 100%;                      /* Respeta el alto del panel */
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Aqui esta el boton de borrar todo (header del historial) */
+#top{
+    outline: 1px solid #c3c3c3;          /* Borde fino de guía */
+    order: 0;                              /* Va arriba sin mover HTML */
+    display: flex;                         /* Título a la izquierda, 🗑️ a la derecha */
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 10px;
+    position: sticky;                      /* Siempre visible al hacer scroll */
+    top: 0;                                /* Se pega al tope del historial */
+    background: #fff;                      /* Fondo para que no “trasluzca” el scroll */
+    z-index: 1;
+}
+
+/* Estilos rápidos del título y del botón de borrar (puedes cambiarlos) */
+.hist_titulo{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+.hist_clear{
+    border: 1px solid #ddd;                /* Marco del botón */
+    background: #fafafa;                   /* Fondo suave */
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Bordes guía para pantalla y botones de la calculadora (solo para ubicar) */
+.resultado,
+.botones{
+    outline: 1px dotted #c3c3c3;          /* Borde fino de guía */
+    min-height: 80px;
+    padding: 8px;
+    box-sizing: border-box;
+    height: 50%;                          /* Cuadra la altura de resultado y botones */
+}
+
+/* La lista del historial sin viñetas y con separación entre items */
+.hist__lista{
+    list-style: none;                      /* Sin numeración */
+    margin: 0;
+    padding: 0;
+}
+.hist__item{
+    display: flex;                         /* “op = res” en una línea */
+    gap: 8px;
+    padding: 6px 4px;
+    border-bottom: 1px dashed #e5e7eb;     /* Separador tenue */
+    font-size: 14px;
+}
+.hist__item .res{
+    margin-left: auto;                     /* Resultado alineado a la derecha */
+    font-weight: 600;
+}
