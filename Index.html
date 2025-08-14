@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+
 </head>
 <body>
 
@@ -26,10 +29,18 @@
 
                 <div id="operaciones"> <!-- Aqui se guardan los calculos -->
 
+                    <!-- Lista donde se irán agregando las operaciones -->
+                    <ol class="hist__lista" id="hist-list" aria-live="polite">
+                        <!-- Ejemplo de item (JS generará estos) -->
+                        <!-- <li class="hist__item"><span class="op">240 ÷ 24</span> <span class="eq">=</span> <span class="res">10</span></li> -->
+                    </ol>
+
                 </div>
 
                 <div id="top"> <!-- Aqui esta el boton de borrar todo-->
-
+                    <!-- Header de historial: título + botón borrar -->
+                    <h2 class="hist_titulo">History</h2>
+                    <button id="hist-clear" class="hist_clear" aria-label="borrar historial" title="Borrar historial">🗑️</button>
                 </div>
 
             </div>
