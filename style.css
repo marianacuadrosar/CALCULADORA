@@ -100,6 +100,7 @@ html,body{ background:var(--bg); }
     margin: 0;
     font-size: 18px;
     font-weight: 600;
+    color: var(--texto);
 }
 .hist_clear{
     border: 1px solid #ddd;                /* Marco del botón */
@@ -131,6 +132,7 @@ html,body{ background:var(--bg); }
     padding: 6px 4px;
     border-bottom: 1px dashed var(--borde);     /* Separador tenue */
     font-size: 14px;
+    color: var(--texto);
 }
 .hist__item .res{
     margin-left: auto;                     /* Resultado alineado a la derecha */
