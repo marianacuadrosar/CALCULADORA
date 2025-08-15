@@ -210,10 +210,6 @@ html,body{
 }
 
 .botones .moon {
-    border: 1px solid #c4c4c4;
-<<<<<<< Updated upstream
-}
-
 #icon {
     position: relative;
     justify-items: center;
@@ -221,8 +217,6 @@ html,body{
     max-width: 26px;
     margin: auto;
     color: #ff3b7f;;
-=======
->>>>>>> Stashed changes
 }
 
 .botones button:hover { /* Efecto al pasar el cursor sobre el botón se pone mas oscuro el boton */
