@@ -1,7 +1,11 @@
-#contenedor{
-    background-color: #e3e3e3;
-}
+html, body { background:#fff; margin:0; }     /* fondo general blanco */
 
+#contenedor{
+    background: transparent;                  /* <- sin gris aquí */
+    display: flex;
+    justify-content: center;                  /* centra horizontal */
+    padding: 24px 0;                          /* aire arriba/abajo */
+}
 
 
 /* Aqui se incluye el recuadro de la calculadora y el historial */
@@ -10,18 +14,24 @@
     display: flex;                        /* Mostrar calculadora e historial lado a lado */
     gap: 16px;                            /* Espacio entre paneles */
     box-sizing: border-box;               /* Bordes no rompen el ancho */
-    width: 100%;                          /* ocupa todo el ancho disponible del viewport */
     max-width: 32rem;                     /* tope superior requerido */
     min-width: 24rem;                     /* tope inferior requerido */
+    max-height: 64rem;
+    min-height: 24rem;
     margin-left: auto;                    /* centrado horizontal */
     margin-right: auto;                   /* centrado horizontal */
     height: auto;
+
+    /* NUEVO: el “grisecito” solo alrededor del contenido */
+    background: #e3e3e3;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.3);   /* opcional, se ve pro */
 }
 
 /* Este es el espacio de la calculadora */
 #calculadora{
     flex: 1 1 100%;
-    min-height: 700px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -29,26 +39,27 @@
 
 /* Aqui esta el historial de las operaciones realizadas */
 #historial{
-    outline: 2px solid #ffb86c;          /* Borde para ubicar el panel */
+    background-color: #f1f1f1;
+    height: 700px;
     flex: 1 1 60%;                         /* Ocupa ~40% (ajústalo) */
     display: flex;                         /* Para reordenar hijos sin tocar el HTML */
     flex-direction: column;
     position: relative;  
-    min-width: 0;                  /* Contexto para sticky */
+    min-width: 0;
     border-radius: 10px;
-    overflow: clip;
+    overflow: hidden;
+    min-height: 0;
 }
 
 /* Aqui se guardan los calculos (zona scrollable) */
 #operaciones{
-    outline: 1px solid #c3c3c3;          /* Borde fino de guía */
     order: 1;                              /* Va debajo del header sin mover HTML */
-    overflow-y: auto;                      /* Scroll vertical del historial */
     flex: 1;                               /* Ocupa todo el espacio disponible */
-    max-height: 100%;                      /* Respeta el alto del panel */
     padding: 8px;
     box-sizing: border-box;
     border-radius: 10px;
+    overflow-y: auto;
+    min-height: 0;
 }
 
 /* Aqui esta el boton de borrar todo (header del historial) */
@@ -83,7 +94,6 @@
 /* Bordes guía para pantalla y botones de la calculadora (solo para ubicar) */
 .resultado,
 .botones{
-    outline: 1px solid #c3c3c3;          /* Borde fino de guía */
     min-height: 80px;
     padding: 8px;
     box-sizing: border-box;
@@ -113,16 +123,20 @@
     position: relative;
     z-index: 1;
     display: flex;
-    flex:0 0 20%;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    padding: 15px;
+    padding: 32px 16px 48px 16px;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 20px;
     width: 100%; /* ocupar todo el ancho del contenedor padre */
+    min-height: 175px;            /* PARA AJUSTAR ENTRE RESULTADO Y BOTONES ESE EFECTO DE SUPERPOSICION*/
     background-color: #fdfdfd;
+    margin-bottom: -35px;         /* PARA AJUSTAR ENTRE RESULTADO Y BOTONES ESE EFECTO DE SUPERPOSICION*/
+
 }
+
+
 
 #operacion {
     font-size: 1.2rem;
@@ -149,9 +163,11 @@
     grid-template-columns: repeat(4, minmax(0,1fr));
     gap: 10px;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     box-sizing: border-box;
     flex:0 0 80%;
+    justify-items: center;
+    align-content: space-around;
     background-color: #f3f3f3;
 }
 
@@ -201,4 +217,13 @@
     font-size: 1.5rem;
     border-radius: 25px;
     height: 100%;
+    position: relative;
+    filter: drop-shadow(0 0 10px #ff0080)
+            drop-shadow(0 0 10px #ff7f50);
+}
+
+#igual:hover, #igual:focus-visible{
+    transform: translateY(-1px);
+    filter: drop-shadow(0 0 22px rgba(255, 0, 128, .6))
+    drop-shadow(0 0 32px rgba(255, 127, 80, .35));
 }
