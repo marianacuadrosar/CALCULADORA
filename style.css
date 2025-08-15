@@ -165,10 +165,11 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
     padding: 20px;
     border-radius: 20px;
     box-sizing: border-box;
-    flex:0 0 80%;
+
     justify-items: center;
     align-content: space-around;
     background-color: #f3f3f3;
+    min-height: 470px;                              /* AJUSTA LA ALTURA DE BOTONES*/
 }
 
 .botones button {
