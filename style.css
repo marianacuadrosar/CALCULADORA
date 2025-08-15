@@ -29,10 +29,11 @@ html,body{ background:var(--bg); }
 /* Aqui se incluye el recuadro de la calculadora y el historial */
 #contenedor2{
     padding: 12px;                        /* Separación interna */
-    display: flex;                        /* Mostrar calculadora e historial lado a lado */
+    display: flex;      
+    flex-wrap: wrap;                  /* Mostrar calculadora e historial lado a lado */
     gap: 16px;                            /* Espacio entre paneles */
-    box-sizing: border-box;               /* Bordes no rompen el ancho */
-    max-width: 32rem;                     /* tope superior requerido */
+    box-sizing: border-box;
+    max-width: 60 rem;               /* Bordes no rompen el ancho */                /* tope superior requerido */
     min-width: 24rem;                     /* tope inferior requerido */
     max-height: 64rem;
     min-height: 24rem;
@@ -48,7 +49,7 @@ html,body{ background:var(--bg); }
 
 /* Este es el espacio de la calculadora */
 #calculadora{
-    flex: 1 1 100%;
+    flex: 1 1 60%;
     height: 700px;
     display: flex;
     flex-direction: column;
@@ -59,8 +60,9 @@ html,body{ background:var(--bg); }
 #historial{
     background-color: var(--panel);
     height: 700px;
-    flex: 1 1 60%;                         /* Ocupa ~40% (ajústalo) */
-    display: flex;                         /* Para reordenar hijos sin tocar el HTML */
+    flex: 1 1 35%;                         /* Ocupa ~40% (ajústalo) */
+    display: flex; 
+    flex-wrap:wrap;                        /* Para reordenar hijos sin tocar el HTML */
     flex-direction: column;
     position: relative;  
     min-width: 0;
