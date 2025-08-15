@@ -1,3 +1,8 @@
+#contenedor{
+    background-color: #e3e3e3;
+}
+
+
 
 /* Aqui se incluye el recuadro de la calculadora y el historial */
 #contenedor2{
@@ -15,23 +20,23 @@
 
 /* Este es el espacio de la calculadora */
 #calculadora{
-    flex: 1 1 100%;                         /* Ocupa ~60% (ajústalo) */
-    height: 700px;                     /* Alto mínimo de referencia */
+    flex: 1 1 100%;
+    min-height: 700px;
     display: flex;
     flex-direction: column;
     min-width: 0;
-
 }
 
 /* Aqui esta el historial de las operaciones realizadas */
 #historial{
     outline: 2px solid #ffb86c;          /* Borde para ubicar el panel */
     flex: 1 1 60%;                         /* Ocupa ~40% (ajústalo) */
-    min-height: 420px;                     /* Alto mínimo de referencia */
     display: flex;                         /* Para reordenar hijos sin tocar el HTML */
     flex-direction: column;
     position: relative;  
     min-width: 0;                  /* Contexto para sticky */
+    border-radius: 10px;
+    overflow: clip;
 }
 
 /* Aqui se guardan los calculos (zona scrollable) */
@@ -43,6 +48,7 @@
     max-height: 100%;                      /* Respeta el alto del panel */
     padding: 8px;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 /* Aqui esta el boton de borrar todo (header del historial) */
@@ -82,6 +88,7 @@
     padding: 8px;
     box-sizing: border-box;
     height: 50%;                          /* Cuadra la altura de resultado y botones */
+
 }
 
 /* La lista del historial sin viñetas y con separación entre items */
@@ -103,23 +110,25 @@
 }
 
 .resultado {
-    background-color: transparent;
+    position: relative;
+    z-index: 1;
     display: flex;
-    flex:0,0,20%;
+    flex:0 0 20%;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
-    border: 2px solid #8aa1ff; /* borde azul */
     border-radius: 8px;
     width: 100%; /* ocupar todo el ancho del contenedor padre */
+    background-color: #fdfdfd;
 }
 
 #operacion {
     font-size: 1.2rem;
     color: #7c7c7c;
     margin: 0;
+    text-align: right;
 }
 
 #valor {
@@ -128,15 +137,22 @@
     color: black;
     margin: 0;
 }
+
+.inside{
+    margin-top: 20px;
+}
+
 .botones {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(4, minmax(0,1fr));
     gap: 10px;
     padding: 20px;
-    border: 2px solid #8aa1ff; /* borde azul */
     border-radius: 8px;
     box-sizing: border-box;
-    flex:0,0,80%;
+    flex:0 0 80%;
+    background-color: #f3f3f3;
 }
 
 .botones button {
@@ -146,8 +162,12 @@
     aspect-ratio: 1 / 1;
     max-width: 70px;
     cursor: pointer;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc; /* borde sutil para cada botón */
+    background-color: #f3f3f3;
+    border: none;
+}
+
+.botones .moon {
+    border: 1px solid #c4c4c4;
 }
 
 .botones button:hover { /* Efecto al pasar el cursor sobre el botón se pone mas oscuro el boton */
@@ -158,9 +178,9 @@
     transform: scale(0.95); 
 }
 
-.btn-funcion {
-    background-color: #e0e0e0;
-    color: #ff3b7f;
+.botones .bt {
+    background-color: #e7e7e7;
+    color: #373737;
     font-weight: bold;
 }
 
@@ -169,7 +189,7 @@
 }
 
 #ac {
-    background-color: white;
+    background-color: #f3f3f3;
     color: #ff3b7f;
     font-weight: bold;
 }
