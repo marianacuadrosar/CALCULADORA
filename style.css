@@ -36,16 +36,9 @@ html,body{
 /* Aqui se incluye el recuadro de la calculadora y el historial */
 #contenedor2{
     padding: 12px;                        /* Separación interna */
-    display: flex;      
-    flex-wrap: wrap;                  /* Mostrar calculadora e historial lado a lado */
+    display: flex;                        /* Mostrar calculadora e historial lado a lado */
     gap: 16px;                            /* Espacio entre paneles */
-    box-sizing: border-box;
-    max-width: 60 rem;               /* Bordes no rompen el ancho */                /* tope superior requerido */
-    min-width: 24rem;                     /* tope inferior requerido */
-    max-height: 64rem;
-    min-height: 24rem;
-    margin-left: auto;                    /* centrado horizontal */
-    margin-right: auto;                   /* centrado horizontal */
+    box-sizing: border-box;               /* Bordes no rompen el ancho */                 /* centrado horizontal */
     height: auto;
 
     /* NUEVO: el “grisecito” solo alrededor del contenido */
@@ -56,7 +49,7 @@ html,body{
 
 /* Este es el espacio de la calculadora */
 #calculadora{
-    flex: 1 1 60%;
+    flex: 1 1 100%;
     height: 700px;
     display: flex;
     flex-direction: column;
@@ -67,9 +60,8 @@ html,body{
 #historial{
     background-color: var(--panel);
     height: 700px;
-    flex: 1 1 35%;                         /* Ocupa ~40% (ajústalo) */
-    display: flex; 
-    flex-wrap:wrap;                        /* Para reordenar hijos sin tocar el HTML */
+    flex: 1 1 60%;                         /* Ocupa ~40% (ajústalo) */
+    display: flex;                         /* Para reordenar hijos sin tocar el HTML */
     flex-direction: column;
     position: relative;  
     min-width: 0;
@@ -217,8 +209,9 @@ html,body{
     border: none;
 }
 
-.botones .icons {
+.botones .moon {
     border: 1px solid #c4c4c4;
+<<<<<<< Updated upstream
 }
 
 #icon {
@@ -228,6 +221,8 @@ html,body{
     max-width: 26px;
     margin: auto;
     color: #ff3b7f;;
+=======
+>>>>>>> Stashed changes
 }
 
 .botones button:hover { /* Efecto al pasar el cursor sobre el botón se pone mas oscuro el boton */
