@@ -11,7 +11,14 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
     --texto:#f5f6f8; --texto-sec:#b6beca; --borde:#2a2f36;
     --btn-surface:#222733; --btn-muted:#2b3140; --btn-hover:#343c4f;
 }
-html,body{ background:var(--bg); }
+html,body{
+    background:var(--bg);
+}
+
+/* Esto ajusta el font de todo el documento*/
+* {
+    font-family: "Segoe UI", Tahoma;
+}
 
 
 
