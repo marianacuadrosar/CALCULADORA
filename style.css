@@ -223,10 +223,11 @@ html,body{
 
 #icon {
     position: relative;
+    justify-items: center;
     max-height: 26px;
     max-width: 26px;
     margin: auto;
-    color: var(--texto);
+    color: #ff3b7f;;
 }
 
 .botones button:hover { /* Efecto al pasar el cursor sobre el botón se pone mas oscuro el boton */
