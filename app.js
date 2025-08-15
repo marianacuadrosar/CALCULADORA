@@ -146,8 +146,8 @@ const iconDiv = document.getElementById('icon');
 function setThemeIcon() {
     const isDark = document.documentElement.classList.contains('dark');
     iconDiv.innerHTML = isDark
-        ? '<ion-icon name="sunny"></ion-icon>'
-        : '<ion-icon name="moon"></ion-icon>';
+        ? '<ion-icon name="sunny-outline"></ion-icon>'
+        : '<ion-icon name="moon-outline"></ion-icon>';
 }
 setThemeIcon();
 document.getElementById('modo').addEventListener('click', setThemeIcon);

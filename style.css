@@ -210,7 +210,14 @@ html,body{ background:var(--bg); }
 
 .botones .icons {
     border: 1px solid #c4c4c4;
-    
+}
+
+#icon {
+    position: relative;
+    max-height: 26px;
+    max-width: 26px;
+    margin: auto;
+    color: var(--texto);
 }
 
 .botones button:hover { /* Efecto al pasar el cursor sobre el botón se pone mas oscuro el boton */
