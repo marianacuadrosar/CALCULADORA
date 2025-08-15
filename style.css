@@ -1,5 +1,23 @@
 html, body { background:#fff; margin:0; }     /* fondo general blanco */
 
+
+:root{
+    --bg:#ffffff; --panel: #f3f3f3; --panel-soft: #fdfdfd; --card:#e3e3e3;
+    --texto:#111; --texto-sec:#6b7280; --borde:#e5e5e5;
+    --btn-surface:#f3f3f3; --btn-muted:#e7e7e7; --btn-hover:#e5e5e5;
+}
+.dark{
+    --bg:#0f1115; --panel: #27292e; --panel-soft: #212327; --card:#20242c;
+    --texto:#f5f6f8; --texto-sec:#b6beca; --borde:#2a2f36;
+    --btn-surface:#222733; --btn-muted:#2b3140; --btn-hover:#343c4f;
+}
+html,body{ background:var(--bg); }
+
+
+
+
+
+
 #contenedor{
     background: transparent;                  /* <- sin gris aquí */
     display: flex;
@@ -23,7 +41,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
     height: auto;
 
     /* NUEVO: el “grisecito” solo alrededor del contenido */
-    background: #e3e3e3;
+    background: var(--card);
     border-radius: 8px;
     box-shadow: 0 6px 24px rgba(0,0,0,.3);   /* opcional, se ve pro */
 }
@@ -39,7 +57,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
 
 /* Aqui esta el historial de las operaciones realizadas */
 #historial{
-    background-color: #f1f1f1;
+    background-color: var(--panel);
     height: 700px;
     flex: 1 1 60%;                         /* Ocupa ~40% (ajústalo) */
     display: flex;                         /* Para reordenar hijos sin tocar el HTML */
@@ -64,7 +82,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
 
 /* Aqui esta el boton de borrar todo (header del historial) */
 #top{
-    outline: 1px solid #c3c3c3;          /* Borde fino de guía */
+    outline: 1px solid var(--borde);          /* Borde fino de guía */
     order: 0;                              /* Va arriba sin mover HTML */
     display: flex;                         /* Título a la izquierda, 🗑️ a la derecha */
     align-items: center;
@@ -73,7 +91,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
     padding: 8px 10px;
     position: sticky;                      /* Siempre visible al hacer scroll */
     top: 0;                                /* Se pega al tope del historial */
-    background: #fff;                      /* Fondo para que no “trasluzca” el scroll */
+    background: var(--panel);                      /* Fondo para que no “trasluzca” el scroll */
     z-index: 1;
 }
 
@@ -111,12 +129,17 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
     display: flex;                         /* “op = res” en una línea */
     gap: 8px;
     padding: 6px 4px;
-    border-bottom: 1px dashed #e5e7eb;     /* Separador tenue */
+    border-bottom: 1px dashed var(--borde);     /* Separador tenue */
     font-size: 14px;
 }
 .hist__item .res{
     margin-left: auto;                     /* Resultado alineado a la derecha */
     font-weight: 600;
+}
+
+/* Boton de basura */
+.hist_clear{
+    background-color: var(--panel);
 }
 
 .resultado {
@@ -131,7 +154,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
     border-radius: 20px;
     width: 100%; /* ocupar todo el ancho del contenedor padre */
     min-height: 175px;            /* PARA AJUSTAR ENTRE RESULTADO Y BOTONES ESE EFECTO DE SUPERPOSICION*/
-    background-color: #fdfdfd;
+    background-color: var(--panel-soft);
     margin-bottom: -35px;         /* PARA AJUSTAR ENTRE RESULTADO Y BOTONES ESE EFECTO DE SUPERPOSICION*/
 
 }
@@ -140,7 +163,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
 
 #operacion {
     font-size: 1.2rem;
-    color: #7c7c7c;
+    color: var(--texto-sec);
     margin: 0;
     text-align: right;
 }
@@ -148,7 +171,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
 #valor {
     font-size: 2.5rem;
     font-weight: bold;
-    color: black;
+    color: var(--texto);
     margin: 0;
 }
 
@@ -168,7 +191,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
 
     justify-items: center;
     align-content: space-around;
-    background-color: #f3f3f3;
+    background-color: var(--panel);
     min-height: 470px;                              /* AJUSTA LA ALTURA DE BOTONES*/
 }
 
@@ -179,7 +202,7 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
     aspect-ratio: 1 / 1;
     max-width: 70px;
     cursor: pointer;
-    background-color: #f3f3f3;
+    background-color: var(--btn-surface);
     border: none;
 }
 
@@ -196,19 +219,23 @@ html, body { background:#fff; margin:0; }     /* fondo general blanco */
 }
 
 .botones .bt {
-    background-color: #e7e7e7;
-    color: #373737;
+    background-color: var(--btn-muted);
+    color: var(--texto);
     font-weight: bold;
 }
 
 .btn-num {
-    background-color: #f9f9f9;
+    background-color: var(--btn-surface);
 }
 
 #ac {
-    background-color: #f3f3f3;
+    background-color: var(--panel);
     color: #ff3b7f;
     font-weight: bold;
+}
+
+#ac:hover {
+    background-color: var(--btn-hover);
 }
 
 #igual {

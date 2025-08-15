@@ -128,3 +128,15 @@ ac.addEventListener("click", () => {
 histClear.addEventListener("click", () => {
     histList.innerHTML = "";
 });
+
+
+
+
+
+document.getElementById('modo').addEventListener('click', ()=>{
+    const el = document.documentElement;
+    el.classList.toggle('dark');
+    localStorage.theme = el.classList.contains('dark') ? 'dark' : 'light';
+});
+if (localStorage.theme === 'dark') document.documentElement.classList.add('dark');
+
