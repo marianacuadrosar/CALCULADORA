@@ -226,6 +226,7 @@ html,body{ background:var(--bg); }
 
 .btn-num {
     background-color: var(--btn-surface);
+    color : var(--texto)
 }
 
 #ac {
