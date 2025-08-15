@@ -78,6 +78,24 @@ html,body{
     min-height: 0;
 }
 
+#calculadora, #historial {
+    min-width: 280px;    /* ancho mínimo para que se apilen si no hay espacio */
+    flex: 1 0 350px;     /* crecen y se encogen según el espacio */
+    box-sizing: border-box;
+}
+
+#contenedor2 {
+    /* ...otros estilos... */
+    max-width: 6rem; /* Corrige el error de espacio */
+    max-height: 100%;
+}
+
+#historial {
+    min-width: 0;         /* Permite que se encoja */
+    overflow: auto;       /* Agrega scroll si el contenido es mayor */
+    word-break: break-word; /* Evita desbordes de texto largos */
+}
+
 /* Aqui se guardan los calculos (zona scrollable) */
 #operaciones{
     order: 1;                              /* Va debajo del header sin mover HTML */
