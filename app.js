@@ -140,3 +140,14 @@ document.getElementById('modo').addEventListener('click', ()=>{
 });
 if (localStorage.theme === 'dark') document.documentElement.classList.add('dark');
 
+
+//esta parte cambia el icono dependiendo del tema
+const iconDiv = document.getElementById('icon');
+function setThemeIcon() {
+    const isDark = document.documentElement.classList.contains('dark');
+    iconDiv.innerHTML = isDark
+        ? '<ion-icon name="sunny"></ion-icon>'
+        : '<ion-icon name="moon"></ion-icon>';
+}
+setThemeIcon();
+document.getElementById('modo').addEventListener('click', setThemeIcon);

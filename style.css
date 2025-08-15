@@ -208,8 +208,9 @@ html,body{ background:var(--bg); }
     border: none;
 }
 
-.botones .moon {
+.botones .icons {
     border: 1px solid #c4c4c4;
+    
 }
 
 .botones button:hover { /* Efecto al pasar el cursor sobre el botón se pone mas oscuro el boton */
