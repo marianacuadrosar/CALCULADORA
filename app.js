@@ -132,7 +132,7 @@ histClear.addEventListener("click", () => {
 
 
 
-
+//Es lo del dark theme
 document.getElementById('modo').addEventListener('click', ()=>{
     const el = document.documentElement;
     el.classList.toggle('dark');
