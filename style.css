@@ -78,15 +78,13 @@ html,body{
     min-height: 0;
 }
 
-#calculadora, #historial {
-    min-width: 280px;    /* ancho mínimo para que se apilen si no hay espacio */
+#calculadora, #historial {   
     flex: 1 0 350px;     /* crecen y se encogen según el espacio */
     box-sizing: border-box;
 }
 
 #contenedor2 {
-    /* ...otros estilos... */
-    max-width: 6rem; /* Corrige el error de espacio */
+    max-width: 60rem; /* Corrige el error de espacio */
     max-height: 100%;
 }
 
